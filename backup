@@ -1,0 +1,4 @@
+#!/bin/bash
+
+runuser -u _gvm -- pg_dump -O gvmd >/home/cplcadmin/Desktop/gvmd_dump$1.sql
+sftp root@xxx:/home/MPS/Backups <<< $"put /home/cplcadmin/Desktop/gvmd_dump'$1'.sql"
